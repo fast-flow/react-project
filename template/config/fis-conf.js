@@ -1,6 +1,7 @@
 var markrun = require('markrun')
 var path = require('path')
 var config = require('./getConfig')()
+var lodash = require('lodash')
 
 fis.media('debug').match('**', {
     useCache: false
@@ -19,7 +20,52 @@ fis.match('*.md', {
             })
             var html = markrun(
                 content,
-                {},
+                {
+                    replace: {
+                        pre: function (data, options, info) {
+                            if (typeof data.run === 'undefined') {
+                                data.run = false
+                            }
+                            var path = require('path')
+                            var fs = require('fs')
+                            var fullpath = path.join(path.dirname(info.filepath), data.file)
+                            var code = fs.readFileSync(fullpath, 'utf-8').toString()
+                            info.deps = info.deps || []
+                            info.deps.push(fullpath)
+                            code = '<pre class="markrun-source-pre" >' + options.highlight(code) + '</pre>'
+                            if (data.run) {
+                                code = code +'<script data-markrun-lastrun="true" src="'+ data.file + '"></script>'
+                            }
+                            return code
+                        }
+                    },
+                    compile: {
+                        html: function (code, data) {
+                            var source = code
+                            var classNames = []
+                            code.replace(/class=\"([^"]*?)\"/g, function (_, $1) {
+                                if ($1) {
+                                    classNames = classNames.concat($1.split(' '))
+                                }
+                            })
+                            classNames = lodash.uniq(classNames)
+                            classNames = classNames.map(function (item) {
+                                item = '.' + item
+                                if (/--/.test(item)){
+                                    item  = 'html ' + item
+                                }
+                                return item
+                            })
+                            source = source.replace(/class=/g,"className=")
+                            source = source + '\n<!--class:\n' + classNames.join(' {}\n') + ' {}\n-->'
+                            return {
+                                lang: 'html',
+                                code: code,
+                                source: source
+                            }
+                        }
+                    }
+                },
                 infoMarkrun
             )
             // infoMarkrun.deps = infoMarkrun.deps || []

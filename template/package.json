@@ -17,6 +17,7 @@
     "hash-to-port": "^1.0.0",
     "less-plugin-functions": "^0.0.2",
     "livereload": "^0.6.0",
+    "lodash": "^4.17.4",
     "markrun": "^0.18.0",
     "open": "^0.0.5"
   },
