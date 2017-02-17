@@ -1,0 +1,26 @@
+{
+  "name": "react-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "s": "node ./config/open && nodemon -w mock mock/index.js",
+    "dev": "fis3 release -w -d ./output -r ./ -f config/fis-conf.js",
+    "dev:debug": "fis3 release debug -w -d ./output -r ./ -f config/fis-conf.js --verbose"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "fis-parser-jdists": "^2.0.1",
+    "fis-parser-less-2.x": "^0.1.4",
+    "hash-to-port": "^1.0.0",
+    "less-plugin-functions": "^0.0.2",
+    "livereload": "^0.6.0",
+    "markrun": "^0.18.0",
+    "open": "^0.0.5"
+  },
+  "dependencies": {
+    "fms": "^0.0.34"
+  }
+}
