@@ -19,7 +19,8 @@
     "livereload": "^0.6.0",
     "lodash": "^4.17.4",
     "markrun": "^0.18.0",
-    "open": "^0.0.5"
+    "open": "^0.0.5",
+    "webpack": "1.13.2"
   },
   "dependencies": {
     "fms": "^0.0.34"

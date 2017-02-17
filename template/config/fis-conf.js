@@ -105,3 +105,7 @@ fis.media('dev').match('*.{md,html}', {
        return content
    }
 })
+
+fis.match('**.js', {
+    release: false
+})
