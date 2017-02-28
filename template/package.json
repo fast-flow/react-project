@@ -15,6 +15,7 @@
     "fis-parser-jdists": "^2.0.1",
     "fis-parser-less-2.x": "^0.1.4",
     "hash-to-port": "^1.0.0",
+    "less-plugin-autoprefix": "^1.5.1",
     "less-plugin-functions": "^0.0.2",
     "livereload": "^0.6.0",
     "lodash": "^4.17.4",

@@ -4,6 +4,7 @@ var path = require('path')
 var lrserver = livereload.createServer({
     port: config.livereloadServerPort,
     delay: 100,
+    // js文件使用 webpack 热更新
     exclusions: [/\\.git\//, /\\.svn\//, /\\.hg\//, /\.js/]
 })
 var watchPath = path.join(__dirname, '../output')

@@ -81,13 +81,11 @@ fis.match('*.md', {
     ]
 })
 
-var LessPluginFunctions = require('less-plugin-functions')
+
 fis.match('*.less', {
     rExt: '.css',
     parser: fis.plugin('less-2.x', {
-        plugins: [
-            new LessPluginFunctions()
-        ]
+        plugins: config.less.plugins
     })
 })
 
