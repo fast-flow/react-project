@@ -103,7 +103,9 @@ fis.media('dev').match('*.{md,html}', {
        return content
    }
 })
-
 fis.match('**.js', {
     release: false
+})
+fis.match('base/vendor/**/**.js', {
+    release: true
 })
