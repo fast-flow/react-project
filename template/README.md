@@ -1,5 +1,7 @@
 # fast-flow/react-project
 
+[Mock server console](/fms/)
+
 [module](./m/README.md)
 
 ## Install
@@ -17,12 +19,12 @@ npm install
 ## Develop
 
 ```shell
-npm run js
-# Test IE8: npm run js:debug
-npm run dev
 # See compile the details: npm run dev:debug
-npm run s
+npm run dev
+# Test IE8: npm run js:debug
+npm run js
 # After open the browser to refresh the page
+npm run s
 ```
 
 ## Publish
