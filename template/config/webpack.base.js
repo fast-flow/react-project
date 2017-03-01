@@ -1,3 +1,4 @@
+var userConfig = require('../config')
 var config = require('./getConfig')()
 var path = require('path');
 var webpack = require('webpack');
@@ -30,9 +31,9 @@ module.exports = function (settings) {
         plugins: settings.firstPlugins.concat(
             []
         ).concat(settings.lastPlugins),
-        // lessLoader: {
-        //     lessPlugins: userConfig.less.plugins
-        // },
+        lessLoader: {
+            lessPlugins: userConfig.less.plugins
+        },
         module: {
             loaders: [
                 {

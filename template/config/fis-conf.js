@@ -84,9 +84,7 @@ fis.match('*.md', {
 
 fis.match('*.less', {
     rExt: '.css',
-    parser: fis.plugin('less-2.x', {
-        plugins: config.less.plugins
-    })
+    parser: fis.plugin('less-2.x', userConfig.less)
 })
 
 fis.media('dev').match('*.{md,html}', {
