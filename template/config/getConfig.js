@@ -8,7 +8,7 @@ module.exports = function () {
         mockServerPort: hashPort('mockServer:' + iPackgae.name),
         livereloadServerPort: hashPort('livereloadServer:' + iPackgae.name),
         renderServerPort: hashPort('renderServer:' + iPackgae.name),
-        less: require('./less'),
+        webpackServerPort: hashPort('webpackServerPort:' + iPackgae.name),
         babel: JSON.parse(fs.readFileSync(nodePath.join(__dirname, '../.babelrc')).toString())
     }
 }

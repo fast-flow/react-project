@@ -23,7 +23,7 @@ module.exports = function (settings) {
         lastPlugins: [],
         externals: {}
     }, settings)
-    var config = {
+    var output = {
         devtool: settings.devtool,
         entry: settings.entry,
         externals: settings.externals,
@@ -70,5 +70,5 @@ module.exports = function (settings) {
             ]
         }
     }
-    return config
+    return output
 }

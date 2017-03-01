@@ -1,5 +1,6 @@
 var webpack = require('webpack')
 var userConfig = require('../config')
+var nodePath = require('path')
 var webpackConfig = require('./webpack.base')({
     entry: ['webpack-hot-middleware/client', './dev'],
     devtool: 'cheap-module-eval-source-map',
@@ -9,7 +10,7 @@ var webpackConfig = require('./webpack.base')({
     ],
     externals: userConfig.webpackExternals,
     output: {
-        path: path.join(__dirname, '../output'),
+        path: nodePath.join(__dirname, '../output'),
         filename: 'dev.js',
         publicPath: '/'
     }
