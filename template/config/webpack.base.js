@@ -1,3 +1,4 @@
+var config = require('./getConfig')()
 var path = require('path');
 var webpack = require('webpack');
 var extend = require('extend')
@@ -33,20 +34,13 @@ module.exports = function (settings) {
         //     lessPlugins: userConfig.less.plugins
         // },
         module: {
-            postLoaders: [
-                // 如果不需要兼容IE8请去掉 es3ify
-                {
-                    test: /\.(js|md)$/,
-                    loaders: ['es3ify']
-                }
-            ],
             loaders: [
                 {
                     test: /\.js$/,
-                    // loaders: settings.firstJsLoader.concat(
-                    //     ['babel?' + JSON.stringify(userConfig.babel)]
-                    // ).concat(settings.lastJsLoader)
-                    // ,
+                    loaders: settings.firstJsLoader.concat(
+                        ['babel?' + JSON.stringify(config.babel)]
+                    ).concat(settings.lastJsLoader)
+                    ,
                     exclude: /node_modules/
                 },
                 {
