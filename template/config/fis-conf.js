@@ -1,6 +1,7 @@
 var markrun = require('markrun')
 var path = require('path')
 var config = require('./getConfig')()
+var userConfig = require('../config')
 var lodash = require('lodash')
 
 fis.media('debug').match('**', {
@@ -26,7 +27,6 @@ fis.match('*.md', {
                             if (typeof data.run === 'undefined') {
                                 data.run = false
                             }
-                            var path = require('path')
                             var fs = require('fs')
                             var fullpath = path.join(path.dirname(info.filepath), data.file)
                             var code = fs.readFileSync(fullpath, 'utf-8').toString()
@@ -75,6 +75,13 @@ fis.match('*.md', {
             html = html.replace(/href="([^"]+)\.md"/g, 'href="$1.html"')
             return html
         },
+        fis.plugin('jdists', {
+            trigger: 'dev'
+        })
+    ]
+})
+fis.match('**.html', {
+    parser: [
         fis.plugin('jdists', {
             trigger: 'dev'
         })

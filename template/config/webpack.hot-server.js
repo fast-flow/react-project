@@ -15,5 +15,5 @@ app.listen(config.webpackServerPort, function(err) {
   if (err) {
     return console.error(err);
   }
-  console.log('WebpackServer: http://127.0.0.1:' + config.webpackServerPort)
+  console.info('WebpackServer: http://127.0.0.1:' + config.webpackServerPort)
 })
