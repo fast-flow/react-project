@@ -1,7 +1,7 @@
+require('./view/common/entry.js')
 class Entry {
     '/example' () { require(['./view/example/app'], renderComponent()) }
 }
-require('./view/common/entry.js')
 
 // =============================
 import { Component } from "react"

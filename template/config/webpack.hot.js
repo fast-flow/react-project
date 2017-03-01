@@ -8,7 +8,6 @@ var webpackConfig = require('./webpack.base')({
     firstPlugins: [
         new webpack.HotModuleReplacementPlugin()
     ],
-    externals: userConfig.webpackExternals,
     output: {
         path: nodePath.join(__dirname, '../output'),
         filename: 'dev.js',
