@@ -1,7 +1,7 @@
 /**
  * Don't git commit this file
  */
-module.exports ={
+module.exports = {
     // If you change begin with webpack properties
     // Run the command again `npm run js` or `npm run js:debug`
     // 如果你修改了以 webpackNoCompile 开头的文件
