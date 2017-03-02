@@ -1,5 +1,4 @@
 var webpack = require('webpack')
-var userConfig = require('../config')
 var nodePath = require('path')
 var webpackConfig = require('./webpack.base')({
     entry: ['webpack-hot-middleware/client', './dev'],

@@ -1,3 +1,3 @@
 require('./webpack.base-server.js')({
-    hot: true
+    hot: false
 })
