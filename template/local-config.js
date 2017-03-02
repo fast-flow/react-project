@@ -5,7 +5,7 @@ module.exports ={
         // './m/**'
     ],
     webpackOnlyCompile: [
-        './view/example/**'
+        // './view/example/**'
     ],
     webpackAlwaysCompile:[
         './view/common/**'

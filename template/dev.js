@@ -1,6 +1,11 @@
 require('./view/common/entry.js')
 class Entry {
-    '/example' () { require(['./view/example/app'], renderComponent()) }
+    '/example' () {
+        require(['./view/example/app'], renderComponent())
+     }
+    '/m/example/README.html' () {
+        require(['./m/example/index.demo.js'], renderComponent())
+     }
 }
 
 // =============================

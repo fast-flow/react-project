@@ -6,6 +6,7 @@ var path = require('path');
 var webpack = require('webpack');
 var extend = require('extend')
 var minimatch = require('minimatch')
+var notifier = require('node-notifier')
 var matchRequest = function (globs, request) {
     return globs.some(function (glob) {
         if (minimatch(request, glob)) {
@@ -14,6 +15,7 @@ var matchRequest = function (globs, request) {
         return false
     })
 }
+var doNotCompileList = []
 /**
  * @param {array|object} settings.entry - 入口文件
  * @param {string} settings.devtool - webpack config devtool
@@ -52,12 +54,11 @@ module.exports = function (settings) {
             var alwaysCompile = matchRequest(localConfig.webpackAlwaysCompile, request)
 
             var isCompile = true
-
             if (noCompile) {
                 isCompile = false
             }
             // if has webpackOnlyCompile glob, other files are not compile
-            if (localConfig.webpackOnlyCompile !== 0) {
+            if (localConfig.webpackOnlyCompile.length !== 0) {
                 isCompile = matchRequest(localConfig.webpackOnlyCompile, request)
             }
             // alwaysCompile 权重最高
@@ -66,7 +67,15 @@ module.exports = function (settings) {
             }
             if (!isCompile) {
                 var message = 'Do_not_compile_' + request.red
-                console.log(message.yellow)
+                doNotCompileList.push(request)
+                setTimeout(function () {
+                    notifier.notify({
+                      'title': 'local-config.js: Don\'t compile',
+                      'message': doNotCompileList.join('\n')
+                    })
+                    console.log('local-config.js: Don\'t compile'.red)
+                    console.log(doNotCompileList.join('\n').yellow)
+                }, 400)
                 return callback(null, 'local_config_js__' + message.replace(/[-.\/]/g,'_'))
 
             }

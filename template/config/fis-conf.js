@@ -3,7 +3,8 @@ var path = require('path')
 var config = require('./getConfig')()
 var userConfig = require('../config')
 var lodash = require('lodash')
-
+var fs = require('fs')
+var markrunTemplate = fs.readFileSync(path.join(__dirname, '../m/template.html')).toString()
 fis.media('debug').match('**', {
     useCache: false
 })
@@ -22,6 +23,9 @@ fis.match('*.md', {
             var html = markrun(
                 content,
                 {
+                    template: function () {
+                        return markrunTemplate
+                    },
                     replace: {
                         pre: function (data, options, info) {
                             if (typeof data.run === 'undefined') {
