@@ -12,4 +12,17 @@ module.exports = function (app) {
             }
         }
     })
+    app.ajax({
+        url: '/example',
+        type: 'post',
+        res: {
+            ok: {
+                status: 'success'
+            },
+            err: {
+                status: 'error',
+                msg:'Error detail!'
+            }
+        }
+    })
 }
