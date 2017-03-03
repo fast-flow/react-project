@@ -25,4 +25,9 @@ module.exports = function (app) {
             }
         }
     })
+    app.view({
+        url: '/example-router',
+        template: '/example-router/index.html',
+        data: {}
+    })
 }

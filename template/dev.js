@@ -3,6 +3,9 @@ class Entry {
     '/example' () {
         require(['./view/example/app'], renderComponent())
      }
+     '/example-router' () {
+        require(['./view/example-router/app'], renderComponent())
+     }
     '/m/example/README.html' () {
         require(['./m/example/index.demo.js'], renderComponent())
      }
