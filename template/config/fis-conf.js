@@ -5,9 +5,22 @@ var userConfig = require('../config')
 var lodash = require('lodash')
 var fs = require('fs')
 var markrunTemplate = fs.readFileSync(path.join(__dirname, '../m/template.html')).toString()
+
+var del = require('del')
+var delPath = __dirname + '/../output'
+// 最终构建必须删除以前的代码，原因1：防止非必要的文件被构建。原因2：防止文件太多导致node内存泄漏
+if (fis.project.currentMedia() === 'online1') {
+    del.sync(delPath)
+    console.log('del: ' + delPath)
+}
+fis.match('{mock/**,npm-debug.log,package.json,yarn.lock,*.js}', {
+    release: false
+})
+
 fis.media('debug').match('**', {
     useCache: false
 })
+
 
 fis.match('*.md', {
     rExt: '.html',
@@ -118,3 +131,43 @@ fis.match('**.js', {
 fis.match('base/vendor/**/**.js', {
     release: true
 })
+
+fis.media('online1')
+    .match('view/map.json', {
+        parser: [
+            function (content) {
+                return content.replace(/__REPLACE_RESOURCE_MAP__/g, '__RESOURCE_MAP__')
+            }
+        ]
+    })
+    .match('**.html', {
+        parser: fis.plugin('jdists', {
+            trigger: 'online'
+        })
+    })
+    .match(userConfig.webpackEntry, {
+        release: true
+    })
+    .match('**.md', {
+        release: false
+    })
+    .match('m/**.html', {
+        release: false
+    })
+
+    fis.media('online2')
+        .match('**', {
+            useHash: true
+        })
+        .match('{*.html,view/map.json}', {
+            useHash: false
+        })
+        .match('*.css', {
+            optimizer: fis.plugin('clean-css')
+        })
+        .match('*.png', {
+          optimizer: fis.plugin('png-compressor')
+        })
+        .match('**', {
+            domain: '/'
+        })

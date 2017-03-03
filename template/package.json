@@ -9,7 +9,8 @@
     "dev": "fis3 release -w -d ./output -r ./ -f config/fis-conf.js",
     "dev:debug": "fis3 release debug -w -d ./output -r ./ -f config/fis-conf.js --verbose",
     "js": "node config/webpack.hot-server",
-    "js:debug": "node config/webpack.debug-server"
+    "js:debug": "node config/webpack.debug-server",
+    "online": "yarn install && fis3 release online1 -d ./output -r ./ -f config/fis-conf.js && webpack --progress  --config ./config/webpack.online.js && fis3 release online2 -d ./output -r ./output -f config/fis-conf.js"
   },
   "author": "",
   "license": "MIT",
@@ -31,11 +32,14 @@
     "colors": "^1.1.2",
     "cors": "^2.8.1",
     "css-loader": "^0.26.1",
+    "del": "^2.2.2",
     "es3ify-webpack-plugin": "^0.0.1",
+    "expose-loader": "^0.7.3",
     "file-loader": "^0.9.0",
     "fis-parser-jdists": "^2.0.1",
     "fis-parser-less-2.x": "^0.1.4",
     "fms": "0.2.0",
+    "glob": "^7.1.1",
     "graceful-fs": "^4.1.11",
     "hash-to-port": "^1.0.0",
     "json-loader": "^0.5.4",
@@ -60,6 +64,10 @@
     "jquery": "1.12.4",
     "react": "0.14.8",
     "react-dom": "0.14.8",
-    "react-router": "2.3.0"
+    "react-redux": "^5.0.3",
+    "react-router": "2.3.0",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.6.0",
+    "redux-actions": "^1.2.2"
   }
 }
