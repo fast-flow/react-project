@@ -13,7 +13,7 @@ module.exports = function (app) {
         }
     })
     app.ajax({
-        url: '/example',
+        url: '/example_some',
         type: 'post',
         res: {
             ok: {

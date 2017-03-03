@@ -1,6 +1,7 @@
 import { Component } from "react"
 import s from "./app-m.less"
 import "../../m/btn/index.less"
+import $ from "jquery"
 class Example extends Component {
     constructor (props) {
         super(props)
@@ -10,7 +11,15 @@ class Example extends Component {
     }
     sendAjax = () => {
         const self = this
-        
+        $.ajax({
+            type: 'post',
+            url: '/example_some',
+            dataType: 'json'
+        }).done(function (res) {
+            self.setState({
+                ajaxText: JSON.stringify(res)
+            })
+        })
     }
     render() {
         const self = this
