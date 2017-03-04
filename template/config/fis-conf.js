@@ -17,12 +17,13 @@ fis.match('{mock/**,npm-debug.log,package.json,yarn.lock,*.js}', {
     release: false
 })
 
-fis.media('debug').match('**', {
-    useCache: false
-})
-
-
-fis.match('*.md', {
+fis.media('dev').match('**.html', {
+    parser: [
+        fis.plugin('jdists', {
+            trigger: 'dev'
+        })
+    ]
+}).match('*.md', {
     rExt: '.html',
     isHtmlLike: true,
     parser: [
@@ -97,13 +98,6 @@ fis.match('*.md', {
         })
     ]
 })
-fis.match('**.html', {
-    parser: [
-        fis.plugin('jdists', {
-            trigger: 'dev'
-        })
-    ]
-})
 
 
 fis.match('*.less', {
@@ -127,8 +121,9 @@ fis.media('dev').match('*.{md,html}', {
 })
 fis.match('**.js', {
     release: false
-})
-fis.match('base/vendor/**/**.js', {
+}).match(userConfig.webpackEntry, {
+    release: true
+}).match('base/vendor/**/**.js', {
     release: true
 })
 
@@ -141,12 +136,11 @@ fis.media('online1')
         ]
     })
     .match('**.html', {
-        parser: fis.plugin('jdists', {
-            trigger: 'online'
-        })
-    })
-    .match(userConfig.webpackEntry, {
-        release: true
+        parser: [
+            fis.plugin('jdists', {
+                trigger: 'online'
+            })
+        ]
     })
     .match('**.md', {
         release: false
@@ -168,6 +162,6 @@ fis.media('online1')
         .match('*.png', {
           optimizer: fis.plugin('png-compressor')
         })
-        .match('**', {
-            domain: '/'
-        })
+        // .match('**', {
+        //     domain: '/'
+        // })
