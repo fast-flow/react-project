@@ -25,6 +25,7 @@ class Example extends Component {
         const self = this
         return (
             <div className={s.content} >
+                <img src={require('./logo.png')} alt=""/>
                 react example
                 <div className="m-btn" onClick={self.sendAjax} >ajax</div>
                 <pre>{self.state.ajaxText}</pre>

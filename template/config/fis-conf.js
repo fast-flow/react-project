@@ -153,7 +153,7 @@ fis.media('online1')
         .match('**', {
             useHash: true
         })
-        .match('{*.html,view/map.json}', {
+        .match('{*.html,view/map.json,__media/**}', {
             useHash: false
         })
         .match('*.css', {
