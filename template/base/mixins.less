@@ -1,0 +1,17 @@
+// 请先阅读 README.md Manual 章节
+.CLEAR() {
+    zoom:1; /* for IE6 IE7 */
+    &:after {
+        visibility:hidden;
+        display:block;
+        font-size:0;
+        content:" ";
+        clear:both;
+        height:0;
+    }
+}
+.CENTERBOX() {
+    width:1220px;
+    margin-left: auto;
+    margin-right: auto;
+}
