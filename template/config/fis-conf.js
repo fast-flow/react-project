@@ -123,7 +123,7 @@ fis.match('**.js', {
     release: false
 }).match(userConfig.webpackEntry, {
     release: true
-}).match('base/vendor/**/**.js', {
+}).match(userConfig.vendorFile, {
     release: true
 })
 
