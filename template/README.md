@@ -31,13 +31,12 @@ npm run s
 
 ### mobile use rem
 
-[fast-flow/lessrem](https://github.com/fast-flow/lessrem) [example-rem](./view/example-rem/index.html)
+[fast-flow/lessrem](https://github.com/fast-flow/lessrem)  <a href="./m/rem/index.demo.html">m/rem/index.demo.html</a>
 
 ### base/mixins.less
 
 #### CLEAR
 
-[./view/example-rem/index.less](./view/example-rem/index.less)
 
 use `.CLEAR`
 
