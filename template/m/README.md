@@ -10,4 +10,5 @@
 ## module
 
 - **[example](./example/README.md)**
+- [icons](./icons/README.md)
 - [btn](./btn/README.md)

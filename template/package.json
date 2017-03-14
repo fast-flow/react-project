@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "s": "node ./config/open && nodemon -w mock mock/index.js",
+    "iconfont": "node ./config/iconfont",
     "dev": "fis3 release -w -d ./output -r ./ -f config/fis-conf.js",
     "dev:debug": "fis3 release debug -w -d ./output -r ./ -f config/fis-conf.js --verbose",
     "js": "node config/webpack.hot-server",
