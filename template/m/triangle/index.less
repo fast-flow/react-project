@@ -1,0 +1,37 @@
+.TRIANGLE_TOP(@size, @color) {
+    content: '';
+    display:inline-block;width:0;height:0;overflow:hidden;line-height:0;font-size:0;
+    vertical-align:middle;
+    border-bottom:@size solid @color;
+    border-top:0 none;
+    border-left:@size solid transparent;
+    border-right:@size solid transparent;
+}
+.TRIANGLE_RIGHT(@size, @color) {
+    content: '';
+    display:inline-block;width:0;height:0;overflow:hidden;line-height:0;font-size:0;
+    vertical-align:middle;
+    border-left:@size solid @color;
+    border-right:0 none;
+    border-top:@size solid transparent;
+    border-bottom:@size solid transparent;
+}
+
+.TRIANGLE_BOTTOM(@size, @color) {
+    content: '';
+    display:inline-block;width:0;height:0;overflow:hidden;line-height:0;font-size:0;
+    vertical-align:middle;
+    border-top:@size solid @color;
+    border-bottom:0 none;
+    border-left:@size solid transparent;
+    border-right:@size solid transparent;
+}
+.TRIANGLE_LEFT(@size, @color) {
+    content: '';
+    display:inline-block;width:0;height:0;overflow:hidden;line-height:0;font-size:0;
+    vertical-align:middle;
+    border-right:@size solid @color;
+    border-left:0 none;
+    border-top:@size solid transparent;
+    border-bottom:@size solid transparent;
+}

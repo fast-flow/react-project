@@ -16,6 +16,7 @@ npm i -g webpack --registry=https://registry.npm.taobao.org
 npm install
 # Suggested Use: yarn
 ```
+
 ## Develop
 
 ```shell
@@ -29,66 +30,12 @@ npm run s
 
 ## Manual
 
+You must read `m/centerbox/README.md` `m/clear/README.md` `m/rem/README.md` `m/triangle/README.md`
+
 ### mobile use rem
 
 [fast-flow/lessrem](https://github.com/fast-flow/lessrem)  <a href="./m/rem/index.demo.html">m/rem/index.demo.html</a>
 
-### base/mixins.less
-
-#### CLEAR
-
-
-use `.CLEAR`
-
-**bad**:
-
-```html
-<div class="clearify m-tab" >
-    <span class="m-tab-item">1</span>
-    <span class="m-tab-item">2</span>
-    <span class="m-tab-item">3</span>
-</div>
-```
-
-**good**:  
-
-```less
-@import "../../base/mixins.less";
-.m-tab {
-    .CLEAR;
-}
-```
-
-```html
-<div class="m-tab" >
-    <span class="m-tab-item">1</span>
-    <span class="m-tab-item">2</span>
-    <span class="m-tab-item">3</span>
-</div>
-```
-
-#### CENTERBOX
-
-[./view/example/index.less](./view/example/index.less)
-
-> You need use `.CENTERBOX`  mixins style
-
-```less
-// bad
-.m-head {
-    width:1000px;
-    margin-left:auto;
-    margin-right:auto;
-}
-```
-
-```less
-// good
-@import "../../base/mixins.less";
-.m-head {
-    .CENTERBOX;
-}
-```
 
 ## Publish
 

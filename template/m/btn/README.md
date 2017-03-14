@@ -120,13 +120,19 @@
 <span class="m-btn m-btn--loading m-btn--3 m-btn--info" >m-btn--3</span>
 <span class="m-btn m-btn--loading m-btn--4 m-btn--warning" >m-btn--4</span>
 <span class="m-btn m-btn--loading m-btn--5 m-btn--danger" >m-btn--5</span>
-<span class="m-btn m-btn--loading m-btn--6 m-btn--primary2" >m-btn--6</span>
-<span class="m-btn m-btn--loading m-btn--7 m-btn--success2" >m-btn--7</span>
-<span class="m-btn m-btn--loading m-btn--8 m-btn--info2" >m-btn--8</span>
-<span class="m-btn m-btn--loading m-btn--9 m-btn--warning2" >m-btn--9</span>
-<span class="m-btn m-btn--loading m-btn--10 m-btn--danger2" >m-btn--10</span>
+<span class="m-btn m-btn--loading m-btn--6 m-btn--primary-o" >m-btn--6</span>
+<span class="m-btn m-btn--loading m-btn--7 m-btn--success-o" >m-btn--7</span>
+<span class="m-btn m-btn--loading m-btn--8 m-btn--info-o" >m-btn--8</span>
+<span class="m-btn m-btn--loading m-btn--9 m-btn--warning-o" >m-btn--9</span>
+<span class="m-btn m-btn--loading m-btn--10 m-btn--danger-o" >m-btn--10</span>
 <span class="m-btn m-btn--loading m-btn--11 m-btn--primary" >m-btn--11</span>
 <span class="m-btn m-btn--loading m-btn--12 m-btn--success" >m-btn--12</span>
 <span class="m-btn m-btn--loading m-btn--13 m-btn--info" >m-btn--13</span>
 <span class="m-btn m-btn--loading m-btn--14 m-btn--warning" >m-btn--14</span>
+````
+
+### fill
+
+````html
+<span class="m-btn m-btn--fill m-btn--5 m-btn--danger" >m-btn--fill</span>
 ````
