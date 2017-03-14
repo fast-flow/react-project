@@ -10,6 +10,7 @@ onlineEntry.forEach(function (path) {
 })
 
 var webpackConfig = require('./webpack.base')({
+    externals: userConfig.webpackExternals,
     entry: onlineEntryMap,
     lastPlugins: [
        new webpack.DefinePlugin({

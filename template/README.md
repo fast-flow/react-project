@@ -34,6 +34,8 @@ You must read `m/centerbox/README.md` `m/clear/README.md` `m/rem/README.md` `m/t
 
 ### mobile use rem
 
+如果需要使用 rem 适配移动端请 取消 `view/common/doctype.html` 中对 `m/rem/meta.js` 的注释
+
 [fast-flow/lessrem](https://github.com/fast-flow/lessrem)  <a href="./m/rem/index.demo.html">m/rem/index.demo.html</a>
 
 

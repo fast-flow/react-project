@@ -30,6 +30,9 @@ function renderComponent (settings) {
         props: {}
     }
     settings = extend(true, defaultSettins, settings)
+    if (typeof settings.renderNode === 'string') {
+        settings.renderNode = document.getElementById(settings.renderNode)
+    }
     return function (Component) {
        let App = Component
        if (typeof Component.default !== 'undefined') {
