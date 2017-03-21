@@ -6,6 +6,9 @@ class Entry {
      '/example-router' () {
         require(['./view/example-router/app'], renderComponent())
      }
+     '/example-redux' () {
+         require(['./view/example-redux/app'], renderComponent())
+     }
     '/m/example/README.html' () {
         require(['./m/example/index.demo.js'], renderComponent())
      }
@@ -14,7 +17,6 @@ class Entry {
 // =============================
 import { Component } from "react"
 import { render } from "react-dom"
-import Example from "./view/example/app"
 import extend from "extend"
 
 if (typeof Entry.prototype[location.pathname] === 'function') {

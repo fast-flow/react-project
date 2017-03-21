@@ -30,4 +30,9 @@ module.exports = function (app) {
         template: '/example-router/index.html',
         data: {}
     })
+    app.view({
+        url: '/example-redux',
+        template: '/example-redux/index.html',
+        data: {}
+    })
 }

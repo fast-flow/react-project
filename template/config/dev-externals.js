@@ -8,11 +8,14 @@ var matchRequest = function (globs, request) {
         return false
     })
 }
+var path = require('path')
 var doNotCompileList = []
 var localConfig = require('../local-config')
+var config = require('./getConfig')()
 module.exports = [
     /^[.]+$/,
     function (context, request, callback) {
+        var relativeToProjectRequest = './' + path.join(context, request).replace(config.projectPath, '')
         if (request === './dev' && './dev.js') {
             return callback()
         }
@@ -31,7 +34,7 @@ module.exports = [
         }
         // if has webpackOnlyCompile glob, other files are not compile
         if (localConfig.webpackOnlyCompile.length !== 0) {
-            isCompile = matchRequest(localConfig.webpackOnlyCompile, request)
+            isCompile = matchRequest(localConfig.webpackOnlyCompile, relativeToProjectRequest)
         }
         // alwaysCompile 权重最高
         if (alwaysCompile) {
@@ -48,7 +51,7 @@ module.exports = [
                 console.log('local-config.js: Don\'t compile'.red)
                 console.log(doNotCompileList.join('\n').yellow)
             }, 400)
-            return callback(null, 'local_config_js__' + message.replace(/[-.\/]/g,'_'))
+            return callback(null, 'local_config_js$' + request.replace(/[-.\/]/g,'_'))
 
         }
         return callback()

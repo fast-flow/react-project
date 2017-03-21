@@ -5,6 +5,7 @@ var nodePath = require('path')
 
 module.exports = function () {
     return {
+        projectPath: nodePath.join(__dirname, '../'),
         mockServerPort: hashPort('mockServer:' + iPackgae.name),
         livereloadServerPort: hashPort('livereloadServer:' + iPackgae.name),
         renderServerPort: hashPort('renderServer:' + iPackgae.name),
