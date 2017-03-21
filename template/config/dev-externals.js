@@ -12,6 +12,7 @@ var path = require('path')
 var doNotCompileList = []
 var localConfig = require('../local-config')
 var config = require('./getConfig')()
+var alerted = false
 module.exports = [
     /^[.]+$/,
     function (context, request, callback) {
@@ -43,14 +44,17 @@ module.exports = [
         if (!isCompile) {
             var message = 'Do_not_compile_' + request.red
             doNotCompileList.push(request)
-            setTimeout(function () {
-                notifier.notify({
-                  'title': 'local-config.js: Don\'t compile',
-                  'message': doNotCompileList.join('\n')
-                })
-                console.log('local-config.js: Don\'t compile'.red)
-                console.log(doNotCompileList.join('\n').yellow)
-            }, 400)
+            if (!alerted) {
+                alerted = true
+                setTimeout(function () {
+                    notifier.notify({
+                      'title': 'local-config.js: Don\'t compile',
+                      'message': doNotCompileList.join('\n')
+                    })
+                    console.log('local-config.js: Don\'t compile'.red)
+                    console.log(doNotCompileList.join('\n').yellow)
+                }, 400)
+            }
             return callback(null, 'local_config_js$' + request.replace(/[-.\/]/g,'_'))
 
         }

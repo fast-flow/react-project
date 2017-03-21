@@ -30,7 +30,13 @@ npm run s
 
 ## Manual
 
-必须阅读 `m/centerbox/README.md` `m/clear/README.md` `m/rem/README.md` `m/triangle/README.md` `m/icons/README.md`
+必须阅读
+
+1. [m/centerbox/README.md](./m/centerbox/README.md)
+2. [m/clear/README.md](./m/clear/README.md)
+3. [m/rem/README.md](./m/rem/README.md)
+4. [m/triangle/README.md](./m/triangle/README.md)
+5. [m/icons/README.md](./m/icons/README.md)
 
 ### mobile use rem
 
