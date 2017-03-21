@@ -34,7 +34,7 @@ var webpackConfig = require('./webpack.base')({
     output: {
         path: path.join(__dirname, '../output'),
         filename: '[name].js',
-        publicPath: '/',
+        publicPath: userConfig.domain,
         chunkFilename: '__chunk/[name]-[id]-[hash]-chunk.js'
     }
 })

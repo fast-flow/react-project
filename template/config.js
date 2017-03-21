@@ -16,5 +16,7 @@ module.exports = {
                 browsers: ["not ie < 8"]
             })
         ]
-    }
+    },
+    // "/static/"  "http://www.some.com/" "http://www.some.com/static/" "http://www.some.com/p/news/"
+    domain: '/'
 }

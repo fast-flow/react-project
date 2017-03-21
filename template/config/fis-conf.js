@@ -162,6 +162,6 @@ fis.media('online1')
         .match('*.png', {
           optimizer: fis.plugin('png-compressor')
         })
-        // .match('**', {
-        //     domain: '/'
-        // })
+        .match('**', {
+            domain: userConfig.domain.replace(/\/$/,'')
+        })
