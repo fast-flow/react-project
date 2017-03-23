@@ -2497,9 +2497,12 @@ onetime@^1.0.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/onetime/download/onetime-1.1.0.tgz#a1f7838f8314c516f05ecefcbc4ccfe04b4ed789"
 
-open:
-  version "0.0.5"
-  resolved "http://registry.npm.taobao.org/open/download/open-0.0.5.tgz#42c3e18ec95466b6bf0dc42f3a2945c3f0cad8fc"
+opn:
+  version "4.0.2"
+  resolved "http://registry.npm.taobao.org/opn/download/opn-4.0.2.tgz#7abc22e644dff63b0a96d5ab7f2790c0f01abc95"
+  dependencies:
+    object-assign "^4.0.1"
+    pinkie-promise "^2.0.0"
 
 optimist@^0.6.1, optimist@~0.6.0:
   version "0.6.1"
