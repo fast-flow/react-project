@@ -1,4 +1,5 @@
 import { Component } from "react"
+import Loading from "loading.react"
 class EmailAdd extends Component {
     render () {
         const self = this
@@ -8,7 +9,9 @@ class EmailAdd extends Component {
                 self.props.addEmail(self.props.value)
             }} >
                 <input type="text" value={self.props.value} onChange={self.props.changeValue} />
-                <button type="submit" >add</button>
+                <Loading loading={self.props.loading} >
+                    <button type="submit" >add</button>
+                </Loading>
             </form>
         )
     }

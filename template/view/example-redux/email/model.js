@@ -8,11 +8,22 @@ const model = {
     mapDispatchToProps: function(dispatch) {
         return {
             removeEmail: function (email) {
-                dispatch({
-                    type: 'REMOVE_EMAIL',
-                    payload: {
-                        email: email
+                dispatch(function(dispatch, getState) {
+                    let state = getState()
+                    let firstEmail = state.email.list
+                    if (firstEmail.length) {
+                        firstEmail = ''
                     }
+                    else {
+                        firstEmail = firstEmail[0]
+                    }
+                    dispatch({
+                        type: 'REMOVE_EMAIL',
+                        payload: {
+                            email: email,
+                            firstEmail: firstEmail
+                        }
+                    })
                 })
             }
         }
