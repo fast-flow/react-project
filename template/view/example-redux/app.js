@@ -6,7 +6,6 @@ import Email, {emailModel} from "./email/index"
 import Send, {sendModel} from "./send/index"
 import { composeWithDevTools } from 'redux-devtools-extension'
 import ReduxThunk from 'redux-thunk'
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 let preloadedState = {
     email: {
         list: ['mail@qq.com', 'nimo@163.com', 'master@163.com'],
@@ -23,8 +22,7 @@ let preloadedState = {
 }
 let reducers = combineReducers({
     email: emailModel.reducers,
-    send: sendModel.reducers,
-    routing: routerReducer
+    send: sendModel.reducers
 })
 const store = createStore(
     reducers,
@@ -33,10 +31,6 @@ const store = createStore(
         applyMiddleware(ReduxThunk)
     )
 )
-const history = syncHistoryWithStore(hashHistory, store)
-history.listen(function (location) {
-    console.log('router change: ' + location)
-})
 class App extends Component {
     render () {
         return (

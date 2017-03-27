@@ -2182,7 +2182,7 @@ lodash, lodash@^4.17.2, lodash@^4.2.0, lodash@^4.2.1:
   version "4.17.4"
   resolved "http://registry.npm.taobao.org/lodash/download/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
-lodash-es@^4.2.0, lodash-es@^4.2.1:
+lodash-es@^4.2.1:
   version "4.17.4"
   resolved "http://registry.npm.taobao.org/lodash-es/download/lodash-es-4.17.4.tgz#dcc1d7552e150a0640073ba9cb31d70f032950e7"
 
@@ -2988,19 +2988,14 @@ react-hot-loader:
     react-hot-api "^0.4.5"
     source-map "^0.4.4"
 
-react-redux:
-  version "5.0.3"
-  resolved "http://registry.npm.taobao.org/react-redux/download/react-redux-5.0.3.tgz#86c3b68d56e74294a42e2a740ab66117ef6c019f"
+react-redux@4:
+  version "4.4.6"
+  resolved "http://registry.npm.taobao.org/react-redux/download/react-redux-4.4.6.tgz#4b9d32985307a11096a2dd61561980044fcc6209"
   dependencies:
     hoist-non-react-statics "^1.0.3"
     invariant "^2.0.0"
     lodash "^4.2.0"
-    lodash-es "^4.2.0"
     loose-envify "^1.1.0"
-
-react-router-redux:
-  version "4.0.8"
-  resolved "http://registry.npm.taobao.org/react-router-redux/download/react-router-redux-4.0.8.tgz#227403596b5151e182377dab835b5d45f0f8054e"
 
 react-router@2.3.0:
   version "2.3.0"
