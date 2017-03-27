@@ -11,7 +11,7 @@ module.exports = {
         // './m/**'
     ],
     webpackOnlyCompile: [
-        './view/example-redux/**'
+        // './view/example-redux/**'
     ],
     webpackAlwaysCompile:[
         './view/common/**'
