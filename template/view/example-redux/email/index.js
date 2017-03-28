@@ -1,5 +1,4 @@
 import { connect } from "react-redux"
-import Email from "./Email"
-import emailModel from "./model"
-export default connect(emailModel.mapStateToProps, emailModel.mapDispatchToProps)(Email)
-export { emailModel }
+import App from "./Email"
+import props from "./EmailProps"
+export default connect(props.mapStateToProps, props.mapDispatchToProps)(App)

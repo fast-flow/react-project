@@ -1,25 +1,25 @@
 import { Component } from "react"
-import EmailItem from "./EmailItem"
-import EmailAdd from "./add/index"
+import EmailItem from "./item/Item"
 import { Link } from 'react-router'
+import Add from "./add/index"
 class Email extends Component {
     render () {
         const self = this
         return (
-            <div>
-                <Link to="/send" >send</Link>
-                <h1>Email</h1>
-                <ul>
+            <div style={{padding: 10}} >
+                <Link to="/">Email</Link>|<Link to="/send">Send</Link>
+                <dl>
+                    <dt>Email</dt>
                     {
                         self.props.list.map(function(item, key) {
                             return (
-                                <EmailItem key={key} email={item} removeEmail={self.props.removeEmail}  />
+                                <EmailItem key={key} email={item} onRemove={self.props.removeEmail}  />
                             )
                         })
                     }
-                </ul>
-                <hr />
-                <EmailAdd />
+                </dl>
+                <hr/>
+                <Add />
             </div>
         )
     }

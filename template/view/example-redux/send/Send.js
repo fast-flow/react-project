@@ -1,17 +1,19 @@
 import { Component } from "react"
-import Loading from "loading.react"
 import { Link } from 'react-router'
 class Send extends Component {
     render () {
         const self = this
         return (
-            <div>
-                <Link to="/" >email</Link>
-                <h1>Send</h1>
-                <Loading loading={self.props.send.loading} >
-                    <select value={self.props.send.email} onChange={function (e) {
-                            self.props.changeEmail(e.target.value)
-                        }} >
+            <div style={{padding: 10}} >
+                <Link to="/">Email</Link>|<Link to="/send">Send</Link>
+                <hr/>
+                <form onSubmit={function(e) {
+                        e.preventDefault()
+                        self.props.onSubmit()
+                    }}>
+                    <select value={self.props.send.email} onChange={function(e) {
+                        self.props.onChangeEmail(e.target.value)
+                    }} >
                         {
                             self.props.email.list.map(function (item, key) {
                                 return (
@@ -21,13 +23,13 @@ class Send extends Component {
                         }
                     </select>
                     {self.props.send.email}
-                    <br />
-                    <textarea value={self.props.send.content} onChange={function (e) {
-                        self.props.changeContent(e.target.value)
+                    <hr/>
+                    <textarea value={self.props.send.content} onChange={function(e) {
+                            self.props.onChangeContent(e.target.value)
                     }} />
-                    <br />
-                    <button type="button" onClick={self.props.sendEmail} >send</button>
-                </Loading>
+                    <br/>
+                    <button type="submit" disabled={self.props.send.loading} >Send</button>
+                </form>
             </div>
         )
     }
