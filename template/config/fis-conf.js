@@ -153,8 +153,9 @@ fis.media('online1')
         .match('**', {
             useHash: true
         })
-        .match('{*.html,view/map.json,__media/**}', {
-            useHash: false
+        .match('{*.html,view/map.json,__media/**,__chunk/**}', {
+            useHash: false,
+            release: true
         })
         .match('*.css', {
             optimizer: fis.plugin('clean-css')
