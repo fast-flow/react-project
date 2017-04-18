@@ -5,6 +5,9 @@ var webpackConfig = require('./webpack.base')({
     externals: require('./dev-externals'),
     entry: ['./dev'],
     devtool: 'source-map',
+    firstPostLoaders: [
+        { test: /\.js$/, loader: 'es3ify' }
+    ],
     lastPlugins: [
        new Es3ifyPlugin()
     ],

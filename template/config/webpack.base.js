@@ -14,6 +14,7 @@ var extend = require('extend')
  * @param {array} settings.firstPlugins - 最先执行的 plugins
  * @param {array} settings.lastPlugins - 最后执行的 plugins
  * @param {object} settings.output - webpack output 配置
+ * @param {array} settings.firstPostLoaders - webpack postLoaders 配置
  */
 module.exports = function (settings) {
     settings.externals
@@ -37,6 +38,7 @@ module.exports = function (settings) {
             lessPlugins: userConfig.less.plugins
         },
         module: {
+            postLoaders: settings.firstPostLoaders,
             loaders: [
                 {
                     test: /\.js$/,
