@@ -2,7 +2,6 @@ var webpack = require('webpack')
 var nodePath = require('path')
 var Es3ifyPlugin = require('es3ify-webpack-plugin')
 var webpackConfig = require('./webpack.base')({
-    externals: require('./dev-externals'),
     entry: ['./dev'],
     devtool: 'source-map',
     firstPostLoaders: [

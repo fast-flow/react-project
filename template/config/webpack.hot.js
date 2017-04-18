@@ -3,7 +3,6 @@ var nodePath = require('path')
 var webpackConfig = require('./webpack.base')({
     entry: ['webpack-hot-middleware/client', './dev'],
     devtool: 'cheap-module-eval-source-map',
-    externals: require('./dev-externals'),
     firstJsLoader: ['react-hot'],
     firstPlugins: [
         new webpack.HotModuleReplacementPlugin()

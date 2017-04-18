@@ -1,6 +1,5 @@
 var colors = require('colors');
 var userConfig = require('../config')
-var localConfig = require('../local-config')
 var config = require('./getConfig')()
 var path = require('path');
 var webpack = require('webpack');
