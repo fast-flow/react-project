@@ -1,7 +1,6 @@
 var webpack = require('webpack')
 var path = require('path')
 var glob = require('glob')
-var Es3ifyPlugin = require('es3ify-webpack-plugin')
 var userConfig = require('../config.js')
 var onlineEntry = glob.sync(userConfig.webpackEntry)
 var onlineEntryMap = {}
@@ -16,7 +15,6 @@ var webpackConfig = require('./webpack.base')({
        new webpack.DefinePlugin({
            'process.env.NODE_ENV': JSON.stringify('production')
        }),
-       new Es3ifyPlugin(),
        new webpack.optimize.UglifyJsPlugin({
            fromString: true,
            compress: {
