@@ -6,9 +6,6 @@ var webpackConfig = require('./webpack.base')({
     firstPostLoaders: [
         { test: /\.js$/, loader: 'es3ify' }
     ],
-    lastPlugins: [
-       new Es3ifyPlugin()
-    ],
     output: {
         path: nodePath.join(__dirname, '../output'),
         filename: 'dev.js',
