@@ -1,4 +1,5 @@
 import $ from "jquery"
+import apiAdd_email from "../../api/add_email"
 export default {
     mapStateToProps: function (state) {
         return state.email.add
@@ -19,30 +20,29 @@ export default {
                     dispatch({
                         type: 'email_add_SUBMIT_START'
                     })
-                    $.ajax({
-                        type: 'post',
-                        url: '/example-redux/send',
-                        dataType: 'json',
-                        data: {
+                    apiAdd_email.post(
+                        {
                             email: email
+                        },
+                        {
+                            success: function () {
+                                dispatch({
+                                    type: 'email_add_SUBMITTED',
+                                    payload: {
+                                        email: email
+                                    }
+                                })
+                            },
+                            error: function () {
+                                alert(res.msg)
+                            },
+                            always: function () {
+                                dispatch({
+                                    type: 'email_add_SUBMIT_END'
+                                })
+                            }
                         }
-                    }).done(function (res) {
-                        if (res.status === 'success') {
-                            dispatch({
-                                type: 'email_add_SUBMITTED',
-                                payload: {
-                                    email: email
-                                }
-                            })
-                        }
-                        else {
-                            alert(res.msg)
-                        }
-                    }).always(function() {
-                        dispatch({
-                            type: 'email_add_SUBMIT_END'
-                        })
-                    })
+                    )
                 })
             },
             changeValue: function (email) {

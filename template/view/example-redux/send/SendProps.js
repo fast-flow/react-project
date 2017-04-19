@@ -1,4 +1,5 @@
 import $ from "jquery"
+import apiSend from "../api/send"
 export default {
     mapStateToProps: function (state) {
         return {
@@ -41,29 +42,28 @@ export default {
                     dispatch({
                         type: 'send_SUBMIT_START'
                     })
-                    $.ajax({
-                        type: 'post',
-                        url: '/example-redux/send',
-                        data: {
+                    apiSend.post(
+                        {
                             email: state.send.email,
                             content: state.send.content
                         },
-                        dataType: 'json'
-                    }).done(function (res) {
-                        if (res.status === 'success') {
-                            dispatch({
-                                type: 'send_SUBMITTED'
-                            })
-                            alert('发送成功')
+                        {
+                            success: function () {
+                                dispatch({
+                                    type: 'send_SUBMITTED'
+                                })
+                                alert('发送成功')
+                            },
+                            error: function () {
+                                alert(res.msg)
+                            },
+                            always: function () {
+                                dispatch({
+                                    type: 'send_SUBMIT_END'
+                                })
+                            }
                         }
-                        else {
-                            alert(res.msg)
-                        }
-                    }).always(function () {
-                        dispatch({
-                            type: 'send_SUBMIT_END'
-                        })
-                    })
+                    )
                 })
             }
         }
