@@ -1,5 +1,5 @@
 import $ from "jquery"
-import apiSend from "../api/send"
+import apiSend from "../../api/send"
 export default {
     mapStateToProps: function (state) {
         return {
