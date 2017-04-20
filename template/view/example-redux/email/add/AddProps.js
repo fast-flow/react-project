@@ -1,5 +1,5 @@
 import $ from "jquery"
-import apiAdd_email from "../../../api/add_email"
+import apiAdd_email from "../../../../m/api/add_email"
 export default {
     mapStateToProps: function (state) {
         return state.email.add
