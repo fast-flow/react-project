@@ -6,6 +6,11 @@
 }
 ````
 
-<div id="app"></div>
-
-[./index.demo.js](./index.demo.js)
+````demo
+{
+    title: 'basic',
+    desc: 'react component',
+    html: '<div id="app"></div>',
+    file: './index.demo.js'
+}
+````

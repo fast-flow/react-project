@@ -52,12 +52,13 @@ fis.media('dev').match('**.html', {
                             info.deps.push(fullpath)
                             code = '<pre class="markrun-source-pre" >' + options.highlight(code) + '</pre>'
                             if (data.run) {
-                                code = code +'<script data-markrun-lastrun="true" src="'+ data.file + '"></script>'
+                                code = code +'<script data-markrun-lastrun="true" src="'+ data.file + '"></scr' + 'ipt>'
                             }
                             return code
                         }
                     },
                     compile: {
+                        demo: require('markrun-themes/box-compile-replace'),
                         html: function (code, data) {
                             var source = code
                             var classNames = []
