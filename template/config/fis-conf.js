@@ -16,7 +16,6 @@ if (fis.project.currentMedia() === 'online1') {
 fis.match('{mock/**,npm-debug.log,package.json,yarn.lock,*.js,online}', {
     release: false
 })
-
 fis.media('dev').match('**.html', {
     parser: [
         fis.plugin('jdists', {
@@ -113,7 +112,7 @@ fis.media('dev').match('*.{md,html}', {
            if (content.indexOf('fastbuild-livereload') === -1) {
                livereloadScriptTag = '<script>'+
                                      "document.write('<script data-fastbuild-livereload=\"true\" src=\"http://' + (location.host || 'localhost').split(':')[0] + ':" + config.livereloadServerPort + "/livereload.js?snipver=1\"></' + 'script>')"+
-                                     "</script> "
+                                     "</sc" + "ript> "
                content = content.replace(/<\/\s*body>/, livereloadScriptTag + '</body>')
            }
        }

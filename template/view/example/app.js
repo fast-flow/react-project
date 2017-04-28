@@ -26,7 +26,7 @@ class Example extends Component {
         return (
             <div className={s.content} >
                 <img src={require('./logo.png')} alt=""/>
-                react example
+                react example !
                 <div className="m-btn" onClick={self.sendAjax} >ajax</div>
                 <pre>{self.state.ajaxText}</pre>
             </div>
