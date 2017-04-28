@@ -48,7 +48,9 @@ npm run s
 ## Publish
 
 ```shell
-npm run release
-# Don't uglify: npm run release:debug
-npm run dp
+npm run online
+## or
+npm run online:debug
+npm run deploy:qiniu
+npm run deploy:svn
 ```
