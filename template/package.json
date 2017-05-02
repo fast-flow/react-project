@@ -42,6 +42,7 @@
     "file-loader": "^0.9.0",
     "fis-parser-jdists": "^2.0.1",
     "fis-parser-less-2.x": "^0.1.4",
+    "fis3-deploy-qiniu": "^1.0.8",
     "fms": "0.2.0",
     "glob": "^7.1.1",
     "graceful-fs": "^4.1.11",
