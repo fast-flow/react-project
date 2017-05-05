@@ -7,13 +7,14 @@ var onlineEntryMap = {}
 onlineEntry.forEach(function (path) {
     onlineEntryMap[path.replace(/\.js$/,'')] = './' + path
 })
+var FastUglifyJsPlugin = require('fast-uglifyjs-plugin')
 
 var getConfig  = function (settings) {
     settings = settings || {}
     var uglifyPlugin = []
     if (!settings.debug) {
         uglifyPlugin.push(
-            new webpack.optimize.UglifyJsPlugin({
+            new FastUglifyJsPlugin({
                 fromString: true,
                 compress: {
                     warnings: false,
@@ -24,7 +25,15 @@ var getConfig  = function (settings) {
                 },
                 output: {
                     screw_ie8: false
-                }
+                },
+                // set debug as true to output detail cache information
+                debug: true,
+                // enable cache by default to improve uglify performance. set false to turn it off
+                cache: true,
+                // root directory is the default cache path. it can be configured by following setting
+                cacheFolder: path.resolve(__dirname, '../', '.fast_uglify_cache'),
+                // num of worker process default ,os.cpus().length
+                workerNum: require('os').cpus().length
             })
         )
     }

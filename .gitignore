@@ -3,3 +3,4 @@ output
 online
 npm-debug.log
 template/appid**
+template/.fast_uglify_cache/**

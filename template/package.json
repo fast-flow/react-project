@@ -1,5 +1,5 @@
 {
-  "name": "{{ name }}",
+  "name": "name",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -39,6 +39,7 @@
     "del": "^2.2.2",
     "es3ify-loader": "^0.2.0",
     "expose-loader": "^0.7.3",
+    "fast-uglifyjs-plugin": "^0.1.6",
     "file-loader": "^0.9.0",
     "fis-parser-jdists": "^2.0.1",
     "fis-parser-less-2.x": "^0.1.4",
