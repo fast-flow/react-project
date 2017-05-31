@@ -17,6 +17,8 @@ module.exports = {
             })
         ]
     },
+    relative: false,
+    hash: true,
     // "/static/"  "http://www.some.com/" "http://www.some.com/static/" "http://www.some.com/p/news/"
     domain: '/'
 }

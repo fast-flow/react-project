@@ -1,3 +1,4 @@
+fis.hook(require('fis3-hook-relative'))
 var markrun = require('markrun')
 var path = require('path')
 var config = require('./getConfig')()
@@ -15,6 +16,9 @@ if (fis.project.currentMedia() === 'online1') {
 }
 fis.match('{mock/**,npm-debug.log,package.json,yarn.lock,*.js,online,**.sh}', {
     release: false
+})
+fis.media('dev').match('**', {
+    relative: userConfig.relative
 })
 fis.media('dev').match('**.html', {
     parser: [
@@ -148,7 +152,7 @@ fis.media('online1')
 
     fis.media('online2')
         .match('**', {
-            useHash: true
+            useHash: userConfig.hash
         })
         .match('{*.html,view/map.json,__media/**,__chunk/**}', {
             useHash: false,
