@@ -167,3 +167,16 @@ fis.media('online1')
         .match('**', {
             domain: userConfig.domain.replace(/\/$/,'')
         })
+
+if (userConfig.alwaysHash || userConfig.alwaysHash.length) {
+    userConfig.alwaysHash.forEach(function (hashGlob) {
+        fis.media('online2')
+            .match(hashGlob, {
+                useHash: true
+            }, 999)
+    })
+}
+fis.media('online2')
+    .match('**.html', {
+        useHash: false
+    }, 999)

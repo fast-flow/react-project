@@ -1,5 +1,5 @@
 #!/bin/bash
-svn co https://svn.duapp.com/appidda1vdfz59m --username yourusername --password yourpassword
+svn co https://svn.duapp.com/appidda1vdfz59m --username process.env.SVN_USERNAME --password process.env.SVN_PASSWORD
 cd ./appidda1vdfz59m
 svn update
 cd ../

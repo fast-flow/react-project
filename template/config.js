@@ -18,7 +18,10 @@ module.exports = {
         ]
     },
     relative: false,
-    hash: true,
+    hash: false,
+    alwaysHash: [
+        'view/example/**'
+    ],
     // "/static/"  "http://www.some.com/" "http://www.some.com/static/" "http://www.some.com/p/news/"
     domain: '/'
 }
