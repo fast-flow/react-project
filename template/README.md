@@ -6,15 +6,15 @@
 
 ## Install
 
+- [安装 yarn](https://yarnpkg.com/zh-Hans/docs/install)
+- [Install yarn](https://yarnpkg.com/en/docs/install)
+
 ```shell
-npm i -g fis3 --registry=https://registry.npm.taobao.org
-npm i -g nodemon --registry=https://registry.npm.taobao.org
-npm i -g webpack --registry=https://registry.npm.taobao.org
+yarn global add fis3 nodemon
 ```
 
 ```shell
-npm install
-# Suggested Use: yarn
+yarn install
 ```
 
 ## Develop
