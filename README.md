@@ -2,12 +2,11 @@
 
 ## Installation
 
+- [安装 yarn](https://yarnpkg.com/zh-Hans/docs/install)
+- [Install yarn](https://yarnpkg.com/en/docs/install)
+
 ```shell
-npm i -g vue-cli --registry=https://registry.npm.taobao.org
-# Mac:
-#    sudo npm i -g vue-cli --registry=https://registry.npm.taobao.org
-npm i -g fis3 --registry=https://registry.npm.taobao.org
-npm i -g nodemon --registry=https://registry.npm.taobao.org
+yarn global add fis3 nodemon vue-cli
 ```
 
 ```shell
