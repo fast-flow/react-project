@@ -70,9 +70,6 @@ fis.media('dev').match('**.html', {
                             classNames = lodash.uniq(classNames)
                             classNames = classNames.map(function (item) {
                                 item = '.' + item
-                                if (/--/.test(item)){
-                                    item  = 'html ' + item
-                                }
                                 return item
                             })
                             source = source.replace(/class=/g,"className=")
