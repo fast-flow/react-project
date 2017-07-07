@@ -4,12 +4,40 @@
 
 > 可以先阅读： https://github.com/thx/iconfont-plus/issues/390
 
-每次将 iconfont.cn 中 `Font class` 代码粘贴到 index.less 后需要在项目根目录运行
+## 将 iconfont 代码转化为 less
+
+### 步骤一
+
+获取 iconfont 代码后可通过下面任意一种方式转化为 less
+
+**1**.获取在线链接中的代码。如： http://at.alicdn.com/t/font_yxtllcw0enpfd2t9.css 将代码粘贴到 index.less目录运行
+
+
+**2**.在 iconfont.cn 平台将文件下载到 `m/icons` 目录
+
+目录结构：
 
 ```
-npm run iconfont
+- edit.gif
+- index.demo.less
+- index.less
+- README.md
+
+- demo.css
+- iconfont.css
+- iconfont.ttf
+- demo_fontclass.html
+- iconfont.eot
+- iconfont.woff
+- demo_symbol.html
+- iconfont.js
+- demo_unicode.html
+- iconfont.svg
 ```
-将 iconfont.cn 生成的 `Font class` 代码转化为 less 代码。
+
+### 步骤二
+
+在终端/命令行中切换至项目根目录使用 `npm run iconfont` 将 iconfont.cn 生成的 `Font class` 代码转化为 less 代码。
 
 ````html
 <div class="m-icons-example"></div>
