@@ -54,7 +54,7 @@ npm run online
 ## or
 npm run online:debug
 npm run deploy:qiniu
-npm install -g cpy
+npm install -g cpy-cli
 ## or yarn global add cpy-cli
 npm run deploy:svn
 ```
