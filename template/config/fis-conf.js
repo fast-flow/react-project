@@ -7,6 +7,18 @@ var lodash = require('lodash')
 var fs = require('fs')
 var markrunTemplate = fs.readFileSync(path.join(__dirname, '../m/template.html')).toString()
 
+var glob = require('glob')
+var files = glob.sync('view/**/*').concat(glob.sync('base/**/*')).concat(glob.sync('m/**/*'))
+var path = require('path')
+files.forEach(function (item) {
+    if (/\./.test(path.dirname(item))) {
+        var dest = path.dirname(item).replace(/\./g, '_dot_') + '/' + path.basename(item)
+        fis.match(item, {
+            release: dest
+        }, true)
+    }
+})
+
 var del = require('del')
 var delPath = __dirname + '/../output'
 // 最终构建必须删除以前的代码，原因1：防止非必要的文件被构建。原因2：防止文件太多导致node内存泄漏
