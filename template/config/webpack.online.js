@@ -17,6 +17,7 @@ var getConfig  = function (settings) {
             new FastUglifyJsPlugin({
                 fromString: true,
                 compress: {
+                    unused: false,
                     warnings: false,
                     screw_ie8: false
                 },
