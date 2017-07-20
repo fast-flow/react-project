@@ -42,6 +42,9 @@ var getConfig  = function (settings) {
         externals: userConfig.webpackExternals,
         entry: onlineEntryMap,
         devtool: 'source-map',
+        firstPostLoaders: [
+            { test: /\.js$/, loader: 'es3ify' }
+        ],
         lastPlugins: [
            new webpack.DefinePlugin({
                'process.env.NODE_ENV': JSON.stringify('production')
