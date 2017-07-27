@@ -8,7 +8,7 @@
     "s": "node ./config/open && nodemon -w mock mock/index.js",
     "iconfont": "node ./config/iconfont",
     "dev": "fis3 release -w -d ./output -r ./ -f config/fis-conf.js",
-    "dev:debug": "fis3 release debug -w -d ./output -r ./ -f config/fis-conf.js --verbose",
+    "dev:debug": "fis3 release -w -d ./output -r ./ -f config/fis-conf.js --verbose",
     "js": "node config/webpack.hot-server",
     "js:debug": "node config/webpack.debug-server",
     "online": "yarn install && fis3 release online1 -d ./output -r ./ -f config/fis-conf.js && webpack --progress  --config ./config/webpack.online.js && fis3 release online2 -d ./online -r ./output -f config/fis-conf.js && node config/mv-online-file.js",
