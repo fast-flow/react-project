@@ -26,9 +26,6 @@ if (fis.project.currentMedia() === 'online1') {
     del.sync(delPath)
     console.log('del: ' + delPath)
 }
-fis.match('m/**/**.less', {
-    release: false
-})
 fis.match('{mock/**,npm-debug.log,package.json,yarn.lock,*.js,online,**.sh,_deploy/**}', {
     release: false
 })
@@ -172,6 +169,9 @@ fis.media('online1')
         })
         .match('*.css', {
             optimizer: fis.plugin('clean-css')
+        })
+        .match('m/**/**.css', {
+            release: false
         })
         .match('*.png', {
           optimizer: fis.plugin('png-compressor')
