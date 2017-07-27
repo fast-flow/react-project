@@ -71,7 +71,7 @@ fis.media('dev').match('**.html', {
                     },
                     compile: {
                         demo: require('markrun-themes/box-compile-replace'),
-                        html: function (code, data) {
+                        jsx: function (code, data) {
                             var source = code
                             var classNames = []
                             code.replace(/class=\"([^"]*?)\"/g, function (_, $1) {
@@ -189,3 +189,5 @@ fis.media('online2')
     .match('**.html', {
         useHash: false
     }, 999)
+
+userConfig.fis(fis)

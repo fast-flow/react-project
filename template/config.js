@@ -23,5 +23,8 @@ module.exports = {
         'view/example/**'
     ],
     // "/static/"  "http://www.some.com/" "http://www.some.com/static/" "http://www.some.com/p/news/"
-    domain: '/'
+    domain: '/',
+    fis: function (fis) {
+        // http://fis.baidu.com/fis3/docs/beginning/intro.html
+    }
 }
