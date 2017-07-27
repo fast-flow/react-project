@@ -4,6 +4,7 @@ var glob = require('glob')
 var userConfig = require('../config.js')
 var onlineEntry = glob.sync(userConfig.webpackEntry)
 var onlineEntryMap = {}
+var fs = require('fs')
 onlineEntry.forEach(function (path) {
     onlineEntryMap[path.replace(/\.js$/,'')] = './' + path
 })
@@ -12,7 +13,16 @@ var FastUglifyJsPlugin = require('fast-uglifyjs-plugin')
 var getConfig  = function (settings) {
     settings = settings || {}
     var uglifyPlugin = []
+    var dir = __dirname + '/../_deploy';
+    try {
+        fs.mkdirSync(dir, 0744);
+    }
+    catch (e) {
+        console.log('info: _deploy existing.')
+    }
+
     if (!settings.debug) {
+        fs.create
         uglifyPlugin.push(
             new FastUglifyJsPlugin({
                 fromString: true,
@@ -32,7 +42,7 @@ var getConfig  = function (settings) {
                 // enable cache by default to improve uglify performance. set false to turn it off
                 cache: true,
                 // root directory is the default cache path. it can be configured by following setting
-                cacheFolder: path.resolve(__dirname, '../', '.fast_uglify_cache'),
+                cacheFolder: path.resolve(__dirname, '../', '_deploy/fast_uglify_cache'),
                 // num of worker process default ,os.cpus().length
                 workerNum: require('os').cpus().length
             })
