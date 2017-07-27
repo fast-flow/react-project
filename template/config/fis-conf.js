@@ -14,7 +14,7 @@ if (fis.project.currentMedia() === 'online1') {
     del.sync(delPath)
     console.log('del: ' + delPath)
 }
-fis.match('{mock/**,npm-debug.log,package.json,yarn.lock,*.js,online,**.sh}', {
+fis.match('{mock/**,npm-debug.log,package.json,yarn.lock,*.js,online,**.sh,_deploy/**}', {
     release: false
 })
 fis.media('dev').match('**', {

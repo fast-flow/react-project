@@ -14,6 +14,7 @@
     "online": "yarn install && fis3 release online1 -d ./output -r ./ -f config/fis-conf.js && webpack --progress  --config ./config/webpack.online.js && fis3 release online2 -d ./online -r ./output -f config/fis-conf.js && node config/mv-online-file.js",
     "online:debug": "yarn install && fis3 release online1 -d ./output -r ./ -f config/fis-conf.js && webpack --progress  --config ./config/webpack.online.debug.js && fis3 release online2 -d ./online -r ./output -f config/fis-conf.js && node config/mv-online-file.js",
     "deploy:qiniu": "fis3 release -r ./output -f deploy-qiniu.js",
+    "deploy:svn-co": "sh ./deploy-svn-checkout.sh",
     "deploy:svn": "sh ./deploy-svn.sh"
   },
   "author": "",
