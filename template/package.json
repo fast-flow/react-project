@@ -56,7 +56,7 @@
     "livereload": "^0.6.0",
     "lodash": "^4.17.4",
     "markrun": "0.21.0",
-    "markrun-themes": "0.1.3",
+    "markrun-themes": "^0.1.9",
     "minimatch": "^3.0.3",
     "mv": "^2.1.1",
     "node-notifier": "^5.0.2",
