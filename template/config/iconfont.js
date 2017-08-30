@@ -23,7 +23,7 @@ else {
         ].join('\n'))
         .replace(/\.iconfont/g, '.iconfont()')
         .replace(/font-size:16px;/g, '')
-        .replace(/\?t=\d*(#[^']+)?/g,'')
+        .replace(/\?t=\d*(#[^']+)?/g,'$1')
         .replace(/url\(\'iconfont/g, "url('./iconfont")
     lessSource = '// ICONFONT COMPLIED\r\n' + lessSource
     console.log('------ less ---------')
