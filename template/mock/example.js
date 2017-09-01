@@ -30,19 +30,5 @@ module.exports = function (app) {
         template: '/example-router/index.html',
         data: {}
     })
-    app.view({
-        url: '/example-redux',
-        template: '/example-redux/index.html',
-        data: {}
-    })
-    app.ajax({
-        url: '/example-redux/add_email',
-        type: 'post',
-        timeout: 500
-    })
-    app.ajax({
-        url: '/example-redux/send',
-        type: 'post',
-        timeout: 500
-    })
+    
 }

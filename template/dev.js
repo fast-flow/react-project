@@ -6,20 +6,14 @@ class Entry {
      '/view/example/index.html' () {
         require(['./view/example/app'], renderComponent())
      }
-     '/example-router' () {
-        require(['./view/example-router/app'], renderComponent())
-     }
      '/view/example-router/index.html' () {
         require(['./view/example-router/app'], renderComponent())
      }
-     '/example-redux' () {
-        require(['./view/example-redux/app'], renderComponent())
-     }
-     '/view/example-redux/index.html' () {
-        require(['./view/example-redux/app'], renderComponent())
-     }
     '/m/example/README.html' () {
         require(['./m/example/index.demo.js'], renderComponent())
+     }
+     '/view/redux/index.html' () {
+         require(['./view/redux/app'], renderComponent())
      }
 }
 

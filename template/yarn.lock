@@ -3096,6 +3096,10 @@ react-dom@0.14.8:
   version "0.14.8"
   resolved "http://registry.npm.taobao.org/react-dom/download/react-dom-0.14.8.tgz#0f1c547514263f771bd31814a739e5306575069e"
 
+react-dom@0.14.9:
+  version "0.14.9"
+  resolved "http://registry.npm.taobao.org/react-dom/download/react-dom-0.14.9.tgz#05064a3dcf0fb1880a3b2bfc9d58c55d8d9f6293"
+
 react-hot-api@^0.4.5:
   version "0.4.7"
   resolved "http://registry.npm.taobao.org/react-hot-api/download/react-hot-api-0.4.7.tgz#a7e22a56d252e11abd9366b61264cf4492c58171"
@@ -3129,6 +3133,13 @@ react-router@2.3.0:
 react@0.14.8:
   version "0.14.8"
   resolved "http://registry.npm.taobao.org/react/download/react-0.14.8.tgz#078dfa454d4745bcc54a9726311c2bf272c23684"
+  dependencies:
+    envify "^3.0.0"
+    fbjs "^0.6.1"
+
+react@0.14.9:
+  version "0.14.9"
+  resolved "http://registry.npm.taobao.org/react/download/react-0.14.9.tgz#9110a6497c49d44ba1c0edd317aec29c2e0d91d1"
   dependencies:
     envify "^3.0.0"
     fbjs "^0.6.1"
