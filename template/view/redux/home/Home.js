@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import exampleExplain from "./exampleExplain"
 import Explain from "./Explain"
+import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router'
 
 const style = exampleExplain.style
 
@@ -28,6 +29,9 @@ class Home extends React.Component {
                         )
                     })
                 }
+                <div>
+                    <Link to="/list">list</Link>
+                </div>
                 <Explain />
             </div>
         )
