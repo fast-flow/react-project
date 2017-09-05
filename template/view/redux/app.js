@@ -1,7 +1,7 @@
 import { Component } from "react"
 import { Router, Route, hashHistory } from 'react-router';
 import { Provider} from "react-redux"
-import Home from "../redux_home/index"
+import Home from "./home/index"
 import store from "./store/index"
 class App extends Component {
     render () {

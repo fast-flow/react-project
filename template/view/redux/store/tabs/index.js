@@ -4,7 +4,10 @@ export default function (state = [], action) {
     state = extend(true, [], state)
     let payload = action.payload
     switch (action.type) {
-        case 'ADD_TAGS':
+        case 'REMOVE_TAG':
+            state = state.filter(function (tag) {
+                return tag.value !== payload.value
+            })
         break
     }
     return state
