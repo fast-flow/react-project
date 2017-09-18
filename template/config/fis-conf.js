@@ -5,6 +5,7 @@ var config = require('./getConfig')()
 var userConfig = require('../config')
 var lodash = require('lodash')
 var fs = require('fs')
+var ejs = require('ejs')
 var markrunTemplate = fs.readFileSync(path.join(__dirname, '../m/template.html')).toString()
 
 var glob = require('glob')
@@ -120,9 +121,26 @@ fis.media('dev').match('*.{md,html}', {
        content = content.replace(/_src=(['"].*?.js['"])/g, 'src=$1')
        if (fis.project.currentMedia() === 'dev') {
            if (content.indexOf('fastbuild-livereload') === -1) {
-               livereloadScriptTag = '<script>'+
-                                     "document.write('<script data-fastbuild-livereload=\"true\" src=\"http://' + (location.host || 'localhost').split(':')[0] + ':" + config.livereloadServerPort + "/livereload.js?snipver=1\"></' + 'script>')"+
-                                     "</sc" + "ript> "
+               var livereloadScriptTag = ''
+               var template = function () {/*!
+                   <script data-fastbuild-livereload="true" >
+                   !(function(){
+                       var livereloadjsNode = document.createElement('scr'+'ipt')
+                       livereloadjsNode.setAttribute('src', <%- url %>)
+                       document.body.append(livereloadjsNode)
+                   })()
+                   </script>
+               */}.toString()
+               .replace(/^[^\/]+\/\*!?/, '')
+               .replace(/\*\/[^\/]+$/, '')
+               .replace(/^[\s\xA0]+/, '').replace(/[\s\xA0]+$/, '') // .trim()
+               var livereloadScriptTag = ejs.render(template, {
+                   url: [
+                       "'http://' + (location.host || 'localhost').split(':')[0] + ':",
+                       config.livereloadServerPort,
+                       "/livereload.js?snipver=1'"
+                   ].join('')
+               })
                content = content.replace(/<\/\s*body>/, livereloadScriptTag + '</body>')
            }
        }

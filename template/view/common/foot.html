@@ -1,7 +1,11 @@
 <div class="m-foot"></div>
 <!--jdists trigger="dev" >
     <script>
-        document.write('<sc' + 'ript src="/dev.js"></sc' + 'ript>')
+!(function(){
+    var devjsNode = document.createElement('scr'+'ipt')
+    devjsNode.setAttribute('src', '/dev.js')
+    document.body.append(devjsNode)
+})()
     </script>
 </jdists-->
 <!--jdists trigger="online" >
