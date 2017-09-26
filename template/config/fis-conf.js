@@ -27,6 +27,20 @@ if (fis.project.currentMedia() === 'online1') {
     del.sync(delPath)
     console.log('del: ' + delPath)
 }
+var getClassNames = function (html) {
+    var classNames = []
+    html.replace(/class=\"([^"]*?)\"/g, function (_, $1) {
+        if ($1) {
+            classNames = classNames.concat($1.split(' '))
+        }
+    })
+    classNames = lodash.uniq(classNames)
+    classNames = classNames.map(function (item) {
+        item = '.' + item
+        return item
+    })
+    return classNames
+}
 fis.match('{mock/**,npm-debug.log,package.json,yarn.lock,*.js,online,**.sh,_deploy/**}', {
     release: false
 })
@@ -72,19 +86,20 @@ fis.media('dev').match('**.html', {
                     },
                     compile: {
                         demo: require('markrun-themes/box-compile-replace'),
+                        html: function (code, data) {
+                            var source = code
+                            var classNames = getClassNames(source)
+                            source = source.replace(/class=/g,"className=")
+                            source = source + '\n<!--class:\n' + classNames.join(' {}\n') + ' {}\n-->'
+                            return {
+                                lang: 'html',
+                                code: code,
+                                source: source
+                            }
+                        }
                         jsx: function (code, data) {
                             var source = code
-                            var classNames = []
-                            code.replace(/class=\"([^"]*?)\"/g, function (_, $1) {
-                                if ($1) {
-                                    classNames = classNames.concat($1.split(' '))
-                                }
-                            })
-                            classNames = lodash.uniq(classNames)
-                            classNames = classNames.map(function (item) {
-                                item = '.' + item
-                                return item
-                            })
+                            var classNames = getClassNames(source)
                             source = source.replace(/class=/g,"className=")
                             source = source + '\n<!--class:\n' + classNames.join(' {}\n') + ' {}\n-->'
                             return {
