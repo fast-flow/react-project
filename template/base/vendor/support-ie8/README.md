@@ -19,8 +19,8 @@
     <![endif]-->
 ```
 
-- [polyfill-lt-ie10.js](https://raw.githubusercontent.com/fast-flow/support-ie8/master/polyfill-lt-ie10.js)
-- [polyfill-lt-ie11.js](https://raw.githubusercontent.com/fast-flow/support-ie8/master/polyfill-lte-ie11.js)
+- [polyfill-lt-ie10.js](https://raw.githubusercontent.com/onface/support-ie8/master/polyfill-lt-ie10.js)
+- [polyfill-lt-ie11.js](https://raw.githubusercontent.com/onface/support-ie8/master/polyfill-lte-ie11.js)
 
 ## 其他资源
 

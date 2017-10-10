@@ -13,5 +13,5 @@ yarn global add fis3 nodemon vue-cli webpack@1.13.2
 ```
 
 ```shell
-vue init fast-flow/react-project mycomponent
+vue init onface/react-project mycomponent
 ```

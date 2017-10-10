@@ -1,4 +1,4 @@
-# fast-flow/react-project
+# onface/react-project
 
 [Mock server console](/fms/)
 
@@ -44,7 +44,7 @@ npm run s
 
 如果需要使用 rem 适配移动端请 取消 `view/common/doctype.html` 中对 `m/rem/meta.js` 的注释
 
-[fast-flow/lessrem](https://github.com/fast-flow/lessrem)  <a href="./m/rem/index.demo.html">m/rem/index.demo.html</a>
+[onface/less-rem](https://github.com/onface/less-rem)  <a href="./m/rem/index.demo.html">m/rem/index.demo.html</a>
 
 
 ## Publish
