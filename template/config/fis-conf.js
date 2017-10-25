@@ -96,7 +96,7 @@ fis.media('dev').match('**.html', {
                                 code: code,
                                 source: source
                             }
-                        }
+                        },
                         jsx: function (code, data) {
                             var source = code
                             var classNames = getClassNames(source)
