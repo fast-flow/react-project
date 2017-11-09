@@ -44,6 +44,7 @@ var getClassNames = function (html) {
 fis.match('{mock/**,npm-debug.log,package.json,yarn.lock,*.js,online,**.sh,_deploy/**}', {
     release: false
 })
+fis.config.set("project.watch.usePolling", true)
 fis.media('dev').match('**', {
     relative: userConfig.relative
 })
