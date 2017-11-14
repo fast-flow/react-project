@@ -3,7 +3,9 @@ import { render } from "react-dom"
 import extend from "extend"
 
 // common script
-require('./view/common/entry.js')
+// require('./view/pc/entry.js')
+// or
+// require('./view/mobile/entry.js')
 
 // entry
 switch(location.pathname) {

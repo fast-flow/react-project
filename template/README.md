@@ -42,8 +42,6 @@ npm run s
 
 ### mobile use rem
 
-如果需要使用 rem 适配移动端请 取消 `view/common/doctype.html` 中对 `m/rem/meta.js` 的注释
-
 [onface/less-rem](https://github.com/onface/less-rem)  <a href="./m/rem/index.demo.html">m/rem/index.demo.html</a>
 
 

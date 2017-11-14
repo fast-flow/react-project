@@ -69,7 +69,7 @@ fis.media('dev').match('**.html', {
                         return markrunTemplate
                     },
                     templateDefaultData: {
-                        type: userConfig.type === 'pc'?'common':'mobile',
+                        type: userConfig.type,
                         theme: '',
                         keywords: '',
                         description: ''
