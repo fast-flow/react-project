@@ -41,7 +41,7 @@ var getClassNames = function (html) {
     })
     return classNames
 }
-fis.match('{mock/**,npm-debug.log,package.json,yarn.lock,*.js,online,**.sh,_deploy/**}', {
+fis.match('{mock/**,npm-debug.log,package.json,yarn.lock,*.js,online,**.sh,_deploy/**,m/template.html}', {
     release: false
 })
 fis.config.set("project.watch.usePolling", true)
@@ -67,6 +67,12 @@ fis.media('dev').match('**.html', {
                 {
                     template: function () {
                         return markrunTemplate
+                    },
+                    templateDefaultData: {
+                        type: userConfig.type === 'pc'?'common':'mobile',
+                        theme: '',
+                        keywords: '',
+                        description: ''
                     },
                     replace: {
                         pre: function (data, options, info) {

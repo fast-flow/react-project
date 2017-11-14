@@ -1,5 +1,12 @@
 # rem
 
+<!--
+MARKRUN-DATA
+{
+    type: 'mobile'
+}
+-->
+
 <link rel="stylesheet" href="./index.demo.less">
 
 
