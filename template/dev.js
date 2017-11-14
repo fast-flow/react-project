@@ -13,9 +13,6 @@ switch(location.pathname) {
     case '/view/example/index.html':
         require(['./view/example/app'], renderComponent())
     break
-    case '/view/example-router/index.html':
-        require(['./view/example-router/app'], renderComponent())
-    break
     case '/m/example/README.html':
         require(['./m/example/index.demo.js'], renderComponent())
     break
