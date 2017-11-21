@@ -3,7 +3,7 @@
 统一配置页面的[https://github.com/onface/web-design-notes#hash_size_min-width](最小宽度)
 
 ```less
-@import "../../base/index";
+@import "../../m/base/index";
 .header {
     background-color:#EEE;
 }

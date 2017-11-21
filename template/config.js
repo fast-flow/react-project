@@ -5,7 +5,7 @@ module.exports = {
     type: 'pc', // "pc" "mobile"
     // If you want to in PC mode to develop mobile page, To view /m/rem/README.md and view/login-m/index.html
     webpackEntry: 'view/**/**entry.js',
-    vendorFile: '{base/vendor/**/**.js,m/rem/meta.js,m/icons/iconfont.js}',
+    vendorFile: '{m/support-ie8/**.js,m/rem/meta.js,m/icons/iconfont.js}',
     webpackExternals: {
         'jquery': 'jQuery',
         'react': 'React',

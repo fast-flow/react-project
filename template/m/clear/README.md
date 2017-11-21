@@ -1,7 +1,7 @@
 ## less-clear
 
 ```less
-@import "../../base/index";
+@import "../../m/base/index";
 .box{
    .CLEAR;
 }

@@ -20,6 +20,7 @@ app.run({
     port: config.mockServerPort,
     static: './output',
     urlRewrite:urlRewrite,
+    read: ['view/example', 'view/example-m', 'view/redux'],
     connect: function (req, res, next) {
         if (req.url === '/__webpack_hmr') {
             res.redirect(webpackServerUrl + '/__webpack_hmr')
