@@ -97,7 +97,7 @@ fis.media('dev').match('**.html', {
                             var source = code
                             var classNames = getClassNames(source)
                             // source = source.replace(/class=/g,"className=")
-                            source = source + '\n<!--class:\n' + classNames.join(' {}\n') + ' {}\n-->'
+                            source = source + '\n<!-- class:\n' + classNames.join(' {}\n') + ' {}\n-->'
                             return {
                                 lang: 'html',
                                 code: code,
@@ -108,7 +108,7 @@ fis.media('dev').match('**.html', {
                             var source = code
                             var classNames = getClassNames(source)
                             source = source.replace(/class=/g,"className=")
-                            source = source + '\n<!--class:\n' + classNames.join(' {}\n') + ' {}\n-->'
+                            source = source + '\n<!-- class:\n' + classNames.join(' {}\n') + ' {}\n-->'
                             return {
                                 lang: 'html',
                                 code: code,
